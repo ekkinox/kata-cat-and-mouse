@@ -1,0 +1,6 @@
+suites:
+    katabooks_suite:
+        namespace: Ekkinox\KataCatAndMouse
+        psr4_prefix: Ekkinox\KataCatAndMouse
+formatter:
+    name: pretty

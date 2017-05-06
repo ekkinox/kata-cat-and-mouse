@@ -1,0 +1,31 @@
+{
+    "name": "ekkinox/kata-cat-and-mouse",
+    "description": "Code kata - Cat and mouse",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathan VUILLEMIN",
+            "email": "ekkinox@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ekkinox\\KataCatAndMouse\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ekkinox\\KataCatAndMouse\\Test\\": "test/"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "symfony/console": "^3.2"
+    },
+    "require-dev": {
+        "behat/behat": "^3.3",
+        "phpunit/phpunit": "^5.0",
+        "phpspec/phpspec": "^3.2"
+    }
+}
