@@ -1,5 +1,6 @@
 <?php
 
+use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Ekkinox\KataCatAndMouse\Model\Cat;
 
@@ -49,6 +50,17 @@ class CatContext implements Context
         PHPUnit_Framework_Assert::assertEquals(
             $position,
             $this->cat->getPosition()
+        );
+    }
+
+    /**
+     * @Then the cat drawing symbol should be :symbol
+     */
+    public function theCatDrawingSymbolShouldBe($symbol)
+    {
+        PHPUnit_Framework_Assert::assertEquals(
+            $symbol,
+            $this->cat->getDrawing()
         );
     }
 }

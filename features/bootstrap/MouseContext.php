@@ -1,5 +1,6 @@
 <?php
 
+use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Ekkinox\KataCatAndMouse\Model\Mouse;
 
@@ -49,6 +50,17 @@ class MouseContext implements Context
         PHPUnit_Framework_Assert::assertEquals(
             $position,
             $this->mouse->getPosition()
+        );
+    }
+
+    /**
+     * @Then the mouse drawing symbol should be :symbol
+     */
+    public function theMouseDrawingSymbolShouldBe($symbol)
+    {
+        PHPUnit_Framework_Assert::assertEquals(
+            $symbol,
+            $this->mouse->getDrawing()
         );
     }
 }

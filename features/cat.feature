@@ -7,3 +7,6 @@ Feature: Book
     Given there is no position set to the cat
     When I set the position 3 to the cat
     Then the cat position should be 3
+
+  Scenario: Getting the cat drawing symbol
+    Then the cat drawing symbol should be "C"

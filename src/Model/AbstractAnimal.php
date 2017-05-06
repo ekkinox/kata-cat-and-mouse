@@ -5,7 +5,7 @@ namespace Ekkinox\KataCatAndMouse\Model;
 /**
  * @package Ekkinox\KataCatAndMouse\Model
  */
-abstract class AbstractAnimal
+abstract class AbstractAnimal implements DrawableInterface
 {
     /**
      * @var int

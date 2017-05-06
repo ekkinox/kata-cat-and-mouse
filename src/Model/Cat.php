@@ -7,5 +7,11 @@ namespace Ekkinox\KataCatAndMouse\Model;
  */
 class Cat extends AbstractAnimal
 {
-
+    /**
+     * @inheritdoc
+     */
+    public function getDrawing(): ?string
+    {
+        return 'C';
+    }
 }

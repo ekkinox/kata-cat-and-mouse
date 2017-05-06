@@ -21,4 +21,9 @@ class CatSpec extends ObjectBehavior
 
         $this->getPosition()->shouldReturn(2);
     }
+
+    function it_has_a_specific_drawing_symbol()
+    {
+        $this->getDrawing()->shouldReturn('C');
+    }
 }
