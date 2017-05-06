@@ -13,7 +13,7 @@ This implementation was made in BDD approach, using coupled:
 
 ## Installation
 
-Build & up provided docker containers stack
+Using composer 
 ```
 $ composer install
 ```
