@@ -20,7 +20,8 @@ class AnimalOutOfBoundsException extends DomainException
     public function __construct(Map $map, AbstractAnimal $animal, Exception $previous = null)
     {
         $message = sprintf(
-            "Animal position '%s' is out of map length limit '%s'",
+            "Animal of type '%s' and with position '%s' is out of map, limit is '%s'",
+                get_class($animal),
                 $animal->getPosition(),
                 $map->getLength()
         );
