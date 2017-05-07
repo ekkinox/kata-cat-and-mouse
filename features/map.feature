@@ -31,3 +31,7 @@ Feature: Map
     When I add the mouse at position 10
     Then the map's mouse position should be 10
 
+  Scenario: Adding the cat and the mouse at the same position
+    When I add the cat at position 10
+    Then I should get a non free position error when I try to add the mouse at position 10
+

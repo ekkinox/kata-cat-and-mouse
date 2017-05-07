@@ -1,10 +1,12 @@
 <?php
 
+use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Ekkinox\KataCatAndMouse\Exception\AnimalOutOfBoundsException;
 use Ekkinox\KataCatAndMouse\Exception\DuplicateAnimalException;
+use Ekkinox\KataCatAndMouse\Exception\NonFreePositionException;
 use Ekkinox\KataCatAndMouse\Model\AbstractAnimal;
 use Ekkinox\KataCatAndMouse\Model\Cat;
 use Ekkinox\KataCatAndMouse\Model\Map;
@@ -143,6 +145,25 @@ class MapContext implements Context
             $position,
             $this->map->getMouse()->getPosition()
         );
+    }
+
+    /**
+     * @Then I should get a non free position error when I try to add the mouse at position :position
+     */
+    public function iShouldGetANonFreePositionErrorWhenITryToAddTheMouseAtPosition($position)
+    {
+        $exception = null;
+
+        try{
+            $this->map->setMouse($this->buildAnimal(Mouse::class, $position));
+        } catch (Exception $exception) {
+            PHPUnit_Framework_Assert::assertEquals(
+                NonFreePositionException::class,
+                get_class($exception)
+            );
+        }
+
+        PHPUnit_Framework_Assert::assertNotNull($exception);
     }
 
     /**

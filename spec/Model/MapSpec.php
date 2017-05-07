@@ -4,6 +4,7 @@ namespace spec\Ekkinox\KataCatAndMouse\Model;
 
 use Ekkinox\KataCatAndMouse\Exception\AnimalOutOfBoundsException;
 use Ekkinox\KataCatAndMouse\Exception\DuplicateAnimalException;
+use Ekkinox\KataCatAndMouse\Exception\NonFreePositionException;
 use Ekkinox\KataCatAndMouse\Model\Cat;
 use Ekkinox\KataCatAndMouse\Model\Map;
 use Ekkinox\KataCatAndMouse\Model\Mouse;
@@ -93,5 +94,17 @@ class MapSpec extends ObjectBehavior
 
         $this->setMouse($mouse)->shouldReturn($this);
         $this->shouldThrow(DuplicateAnimalException::class)->during('setMouse', [$mouse2]);
+    }
+
+    function it_cannot_have_the_cat_and_the_mouse_at_the_same_position()
+    {
+        $cat = new Cat();
+        $cat->setPosition(10);
+
+        $mouse = new Mouse();
+        $mouse->setPosition(10);
+
+        $this->setCat($cat)->shouldReturn($this);
+        $this->shouldThrow(NonFreePositionException::class)->during('setMouse', [$mouse]);
     }
 }
