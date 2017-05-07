@@ -6,4 +6,4 @@ default:
             contexts:
                 - MouseContext
                 - CatContext
-                - BoardContext
+                - MapContext
