@@ -1,5 +1,5 @@
 suites:
-    katabooks_suite:
+    katacatandmouse_suite:
         namespace: Ekkinox\KataCatAndMouse
         psr4_prefix: Ekkinox\KataCatAndMouse
 formatter:
