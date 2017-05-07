@@ -8,7 +8,7 @@ namespace Ekkinox\KataCatAndMouse\Model;
 interface DrawableInterface
 {
     /**
-     * @return null|string
+     * @return string
      */
-    public function getDrawing(): ?string;
+    public function getDrawing(): string;
 }

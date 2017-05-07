@@ -1,7 +1,7 @@
-Feature: Book
+Feature: Cat
   In order to represent a cat
   As a game player
-  I need to be able to set the cat position on th board
+  I need to be able to set the cat position on the board
 
   Scenario: Setting and getting the cat position
     Given there is no position set to the cat

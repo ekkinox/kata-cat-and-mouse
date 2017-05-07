@@ -1,7 +1,7 @@
-Feature: Book
+Feature: Mouse
   In order to represent a mouse
   As a game player
-  I need to be able to set the mouse position on th board
+  I need to be able to set the mouse position on the board
 
   Scenario: Setting and getting the mouse position
     Given there is no position set to the mouse

@@ -10,7 +10,7 @@ class Mouse extends AbstractAnimal
     /**
      * @inheritdoc
      */
-    public function getDrawing(): ?string
+    public function getDrawing(): string
     {
         return 'm';
     }

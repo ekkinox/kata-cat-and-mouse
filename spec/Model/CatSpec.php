@@ -6,6 +6,9 @@ use Ekkinox\KataCatAndMouse\Model\Cat;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
+/**
+ * @package spec\Ekkinox\KataCatAndMouse\Model
+ */
 class CatSpec extends ObjectBehavior
 {
     function it_is_initializable()
