@@ -106,7 +106,17 @@ class Map implements DrawableInterface
      */
     public function getDrawing(): string
     {
-        // TODO: Implement getDrawing() method.
+        $drawing = '';
+
+        foreach ($this->map as $key => $value) {
+            if (null === $value) {
+                $drawing .= '.';
+            } elseif ($value instanceof AbstractAnimal) {
+                $drawing .= $value->getDrawing();
+            }
+        }
+
+        return $drawing;
     }
 
 

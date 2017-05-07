@@ -6,7 +6,7 @@ The code kata subject can be found [at this link](https://api.codewars.com/kata/
 
 ## Behavior Driven Development
 
-This implementation was made in BDD approach, using coupled:
+This implementation was made in BDD approach, using together
 - [Behat](http://behat.org)
 - [PHPSpec](http://www.phpspec.net)
 - [PHPUnit](https://phpunit.de)
