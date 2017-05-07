@@ -1,7 +1,7 @@
 Feature: Mouse
   In order to represent a mouse
   As a game player
-  I need to be able to set the mouse position on the map
+  I need to be able to set the mouse position on the map and to draw it
 
   Scenario: Setting and getting the mouse position
     Given there is no position set to the mouse
