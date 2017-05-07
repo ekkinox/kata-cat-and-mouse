@@ -18,6 +18,19 @@ Using composer
 $ composer install
 ```
 
+## Usage
+
+You can play the game using
+```
+$ bin/escape-game <length> <steps> [<catPosition> <mousePosition>]
+```
+
+Parameters:
+- **length**: length of the map
+- **steps**: max steps allowed for the cat to catch the mouse
+- **catPosition**: cat's position
+- **mousePosition**: mouse's position
+
 ## Run tests
 
 **Behat** test suites (configuration in behat.yml)

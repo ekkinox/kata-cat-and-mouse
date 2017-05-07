@@ -2,7 +2,7 @@
 
 namespace Ekkinox\KataCatAndMouse\Exception;
 
-use Ekkinox\KataCatAndMouse\Model\AbstractAnimal;;
+use Ekkinox\KataCatAndMouse\Model\AbstractAnimal;
 use RuntimeException;
 use Exception;
 

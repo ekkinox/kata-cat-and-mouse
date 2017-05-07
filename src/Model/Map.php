@@ -4,6 +4,7 @@ namespace Ekkinox\KataCatAndMouse\Model;
 
 use Ekkinox\KataCatAndMouse\Exception\AnimalOutOfBoundsException;
 use Ekkinox\KataCatAndMouse\Exception\DuplicateAnimalException;
+use Ekkinox\KataCatAndMouse\Exception\NonFreePositionException;
 
 /**
  * @package Ekkinox\KataCatAndMouse\Model
@@ -48,6 +49,14 @@ class Map implements DrawableInterface
     }
 
     /**
+     * @return int
+     */
+    public function getRowLength(): int
+    {
+        return ceil(sqrt($this->length));
+    }
+
+    /**
      * @return Cat|null
      */
     public function getCat(): ?Cat
@@ -70,6 +79,7 @@ class Map implements DrawableInterface
      *
      * @throws DuplicateAnimalException
      * @throws AnimalOutOfBoundsException
+     * @throws NonFreePositionException
      */
     public function setCat(Cat $cat): self
     {
@@ -89,6 +99,7 @@ class Map implements DrawableInterface
      *
      * @throws DuplicateAnimalException
      * @throws AnimalOutOfBoundsException
+     * @throws NonFreePositionException
      */
     public function setMouse(Mouse $mouse): self
     {
@@ -106,13 +117,16 @@ class Map implements DrawableInterface
      */
     public function getDrawing(): string
     {
-        $drawing = '';
+        $drawing  = '';
 
         foreach ($this->map as $key => $value) {
-            if (null === $value) {
-                $drawing .= '.';
-            } elseif ($value instanceof AbstractAnimal) {
+            if ($value instanceof AbstractAnimal) {
                 $drawing .= $value->getDrawing();
+            } else {
+                $drawing .= '.';
+            }
+            if ($key !== 0 && (($key+1) % $this->getRowLength() == 0)) {
+                $drawing .= PHP_EOL;
             }
         }
 
@@ -126,11 +140,16 @@ class Map implements DrawableInterface
      * @return Map
      *
      * @throws AnimalOutOfBoundsException
+     * @throws NonFreePositionException
      */
     private function addAnimalToMap(AbstractAnimal $animal): self
     {
         if (!$this->isAnimalPositionValid($animal)) {
             throw new AnimalOutOfBoundsException($this, $animal);
+        }
+
+        if (!$this->isPositionFree($animal->getPosition())) {
+            throw new NonFreePositionException($animal->getPosition());
         }
 
         $this->map[$animal->getPosition()] = $animal;
@@ -146,5 +165,15 @@ class Map implements DrawableInterface
     private function isAnimalPositionValid(AbstractAnimal $animal)
     {
         return $this->length >= $animal->getPosition();
+    }
+
+    /**
+     * @param int $position
+     *
+     * @return bool
+     */
+    private function isPositionFree(int $position)
+    {
+        return null === $this->map[$position];
     }
 }
