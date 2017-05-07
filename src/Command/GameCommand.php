@@ -58,10 +58,10 @@ class GameCommand extends Command
             [
                 sprintf(
                     'Cat and mouse escape game (length: %s, steps: %s, cat on: %s, mouse on: %s)',
-                        $length,
-                        $steps,
-                        $catPosition,
-                        $mousePosition
+                    $length,
+                    $steps,
+                    $catPosition,
+                    $mousePosition
                 ),
                 ''
             ]
