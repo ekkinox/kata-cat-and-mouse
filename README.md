@@ -28,8 +28,8 @@ $ bin/escape-game <length> <steps> [<catPosition> <mousePosition>]
 Parameters:
 - **length**: length of the map
 - **steps**: max steps allowed for the cat to catch the mouse
-- **catPosition**: cat's position
-- **mousePosition**: mouse's position
+- **catPosition**: cat's position (random if not given)
+- **mousePosition**: mouse's position (random if not given)
 
 ## Run tests
 

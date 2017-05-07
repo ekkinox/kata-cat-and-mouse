@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * @package Ekkinox\KataSpiral\Command
+ * @package Ekkinox\KataCatAndMouse\Command
  */
 class GameCommand extends Command
 {
