@@ -1,7 +1,7 @@
 Feature: Map
   In order to represent a map
   As a game player
-  I need to be able to set the map length, to add animals on it
+  I need to be able to build a map with a length, and to place animals on it
 
   Background:
     Given I build a map of length 20
@@ -9,7 +9,7 @@ Feature: Map
   Scenario: Checking the map length
     Then the map length should be 20
 
-  Scenario: Adding the cat to the map at an invalid position
+  Scenario: Adding an animal to the map at an invalid position
     Then I should get a position error when I try to add the cat at position 30
 
   Scenario: Adding more than one cat to the board
