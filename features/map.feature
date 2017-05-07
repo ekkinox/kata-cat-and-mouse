@@ -25,7 +25,7 @@ Feature: Map
 
   Scenario: Adding more than one mouse to the board
     When I add the mouse at position 10
-    Then I should get a mouse duplicate mouse error when I try to add another mouse at position 11
+    Then I should get a mouse duplicate error when I try to add another mouse at position 11
 
   Scenario: Adding the mouse to the map at an valid position
     When I add the mouse at position 10

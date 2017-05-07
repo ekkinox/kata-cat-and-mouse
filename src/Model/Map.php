@@ -8,7 +8,7 @@ use Ekkinox\KataCatAndMouse\Exception\DuplicateAnimalException;
 /**
  * @package Ekkinox\KataCatAndMouse\Model
  */
-class Map
+class Map implements DrawableInterface
 {
     /**
      * @var int
@@ -37,13 +37,12 @@ class Map
     {
         $this->length = $length;
         $this->map    = array_fill(0, $this->length, null);
-        $this->cat    = null;
     }
 
     /**
      * @return int
      */
-    public function getLength(): ?int
+    public function getLength(): int
     {
         return $this->length;
     }
@@ -101,6 +100,15 @@ class Map
 
         return $this->addAnimalToMap($this->mouse);
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDrawing(): string
+    {
+        // TODO: Implement getDrawing() method.
+    }
+
 
     /**
      * @param AbstractAnimal $animal

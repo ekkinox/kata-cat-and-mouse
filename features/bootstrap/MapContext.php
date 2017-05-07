@@ -1,6 +1,5 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
@@ -117,9 +116,9 @@ class MapContext implements Context
     }
 
     /**
-     * @Then I should get a mouse duplicate mouse error when I try to add another mouse at position :position
+     * @Then I should get a mouse duplicate error when I try to add another mouse at position :position
      */
-    public function iShouldGetAMouseDuplicateMouseErrorWhenITryToAddAnotherMouseAtPosition($position)
+    public function iShouldGetAMouseDuplicateErrorWhenITryToAddAnotherMouseAtPosition($position)
     {
         $exception = null;
 
@@ -147,7 +146,8 @@ class MapContext implements Context
     }
 
     /**
-     * @param int $position
+     * @param string $class
+     * @param int    $position
      *
      * @return Cat|Mouse|AbstractAnimal
      */
